@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { YoutubeIcon, LinkedinIcon, MailIcon } from "lucide-react"
+import { YoutubeIcon, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,15 +8,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-semibold mb-4">Ace Bridge</h3>
-            <p className="mb-4">Learn to play bridge confidently with less lectures and more playing.</p>
+            <p className="mb-4">Learn to play bridge confidently with less lectures and more playing. The Ace Bridge Way emphasizes actual gameplay with expert guidance.</p>
             <div className="flex space-x-4">
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a href="https://www.youtube.com/channel/UCLDyvzVYXvJtqo_wmUktKCg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <YoutubeIcon className="h-5 w-5" />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <LinkedinIcon className="h-5 w-5" />
               </a>
-              <a href="mailto:team@acebridge.org" aria-label="Email">
+              <a href="mailto:reese@acebridge.org" aria-label="Email">
                 <MailIcon className="h-5 w-5" />
               </a>
             </div>
@@ -41,7 +41,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/featured-lesson" className="hover:underline">
-                  ACBL Featured Lesson
+                  Tutorial Video: Negative Doubles
                 </Link>
               </li>
               <li>
@@ -53,8 +53,17 @@ export function Footer() {
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
-            <p className="mb-2">Email: team@acebridge.org</p>
-            <p>Schedule a free demo lesson today!</p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <MailIcon className="h-4 w-4" />
+                <p>Email: <a href="mailto:reese@acebridge.org" className="hover:underline">reese@acebridge.org</a></p>
+              </div>
+              <div className="flex items-center gap-2">
+                <PhoneIcon className="h-4 w-4" />
+                <p>Phone: <a href="tel:+14155702971" className="hover:underline">(415) 570-2971</a></p>
+              </div>
+            </div>
+            <p className="mt-4">Schedule a free demo lesson today!</p>
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">

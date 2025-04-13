@@ -14,14 +14,14 @@ export function Navbar() {
               <p className="text-sm md:text-base">Try a Free, No-Commitment Demo Lesson</p>
               <p className="text-sm">
                 Email:{" "}
-                <a href="mailto:team@acebridge.org" className="underline">
-                  team@acebridge.org
+                <a href="mailto:reese@acebridge.org" className="underline">
+                  reese@acebridge.org
                 </a>
               </p>
             </div>
           </div>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <a href="https://www.youtube.com/channel/UCLDyvzVYXvJtqo_wmUktKCg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <YoutubeIcon className="h-6 w-6" />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -35,7 +35,7 @@ export function Navbar() {
           <ul className="flex flex-wrap justify-center md:justify-start text-sm md:text-base">
             <li>
               <Link href="/" className="block px-4 py-2 hover:bg-gray-200">
-                Ace Bridge Home
+                Home
               </Link>
             </li>
             <li>
@@ -50,17 +50,7 @@ export function Navbar() {
             </li>
             <li>
               <Link href="/featured-lesson" className="block px-4 py-2 hover:bg-gray-200">
-                ACBL Featured Lesson
-              </Link>
-            </li>
-            <li>
-              <Link href="/pledge" className="block px-4 py-2 hover:bg-gray-200">
-                Social Responsibility Pledge
-              </Link>
-            </li>
-            <li>
-              <Link href="/bookshelf" className="block px-4 py-2 hover:bg-gray-200">
-                Bookshelf
+                Tutorial Video: Negative Doubles
               </Link>
             </li>
             <li>
