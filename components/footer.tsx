@@ -66,7 +66,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Ace Bridge. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ace Bridge LLC. All rights reserved.</p>
         </div>
       </div>
     </footer>
