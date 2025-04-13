@@ -2,6 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 
 export default function TeamPage() {
+  // Standardized dimensions for all photos
+  const photoHeight = 600;
+  const photoWidth = 450;
+
   const team = [
     {
       name: "Reese Koppel",
@@ -12,6 +16,8 @@ export default function TeamPage() {
         "Hundreds of bridge students have benefited from his unique coaching method which emphasizes exciting cardplay techniques over rigorous bidding lectures.",
       ],
       image: "/images/reese-koppel.jpg",
+      imagePosition: "center top",
+      imageScale: "scale-50",
     },
     {
       name: "Castor Mann",
@@ -22,6 +28,8 @@ export default function TeamPage() {
         "Having worked as a bridge teacher at the bridge club in Stockholm since 2019, Castor knows how to teach students in a way that is easy and fun.",
       ],
       image: "/images/castor-mann.jpg",
+      imagePosition: "center top",
+      imageScale: "scale-50",
     },
     {
       name: "Kunal Vohra",
@@ -32,6 +40,8 @@ export default function TeamPage() {
         "Having taught at senior living homes and youth bridge summer camps, Kunal has seen it all. His focus on understanding the logic behind bridge over memorizing countless conventions helps his students learn quicker and more effectively.",
       ],
       image: "/images/kunal-vohra.jpg",
+      imagePosition: "center top",
+      imageScale: "scale-50",
     },
     {
       name: "Rohan Srivastava",
@@ -42,6 +52,8 @@ export default function TeamPage() {
         "Rohan is passionate about helping others take the leap to rapidly improve their bidding and cardplay.",
       ],
       image: "/images/rohan-srivastava.jpg",
+      imagePosition: "top center",
+      imageScale: "scale-50",
     },
   ]
 
@@ -55,14 +67,29 @@ export default function TeamPage() {
 
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {team.map((member) => (
-          <Card key={member.name} className="overflow-hidden">
-            <div className="relative h-64 w-full">
-              <Image
-                src={member.image || "/placeholder.svg?height=300&width=300"}
-                alt={member.name}
-                fill
-                className="object-cover"
-              />
+          <Card key={member.name} className="overflow-hidden flex flex-col">
+            {/* Standardized photo container with fixed dimensions */}
+            <div className="w-full relative overflow-hidden" style={{ height: `${photoHeight}px` }}>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div 
+                  className="relative" 
+                  style={{ 
+                    width: `${photoWidth}px`, 
+                    height: `${photoHeight}px`,
+                    margin: '0 auto'
+                  }}
+                >
+                  <Image
+                    src={member.image || "/placeholder.svg?height=300&width=300"}
+                    alt={member.name}
+                    fill
+                    sizes="300px"
+                    className={`object-cover ${member.imageScale || ''}`}
+                    style={{ objectPosition: member.imagePosition || "center" }}
+                    priority
+                  />
+                </div>
+              </div>
             </div>
             <CardHeader>
               <CardTitle>{member.name}</CardTitle>

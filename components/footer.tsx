@@ -10,13 +10,13 @@ export function Footer() {
             <h3 className="text-xl font-semibold mb-4">Ace Bridge</h3>
             <p className="mb-4">Learn to play bridge confidently with less lectures and more playing.</p>
             <div className="flex space-x-4">
-              <a href="https://youtube.com/acebridge" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a href="hhttps://www.youtube.com/@acebridge1770" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <YoutubeIcon className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/ace-bridge/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <LinkedinIcon className="h-5 w-5" />
               </a>
-              <a href="mailto:team@acebridge.org" aria-label="Email">
+              <a href="mailto:reese@acebridge.org" aria-label="Email">
                 <MailIcon className="h-5 w-5" />
               </a>
             </div>
@@ -53,7 +53,12 @@ export function Footer() {
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
-            <p className="mb-2">Email: team@acebridge.org</p>
+                <p className="mb-2">
+                  Email:{" "}
+                  <a href="mailto:reese@acebridge.org" className="underline">
+                    reese@acebridge.org
+                  </a>
+                </p>
             <p className="mb-2">
               <PhoneIcon className="h-4 w-4 inline mr-1" /> (415) 570-2971
             </p>

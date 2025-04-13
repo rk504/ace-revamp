@@ -1,27 +1,10 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function DemoForm() {
-  const [email, setEmail] = useState("")
-  const [availability, setAvailability] = useState("")
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    // In a real implementation, you would send this to your backend
-    console.log("Form submitted:", { email, availability })
-    setSubmitted(true)
-    setEmail("")
-    setAvailability("")
-  }
-
   return (
     <section className="py-12 px-4 bg-gray-50">
       <div className="container mx-auto max-w-md">
@@ -29,49 +12,22 @@ export function DemoForm() {
           <CardHeader>
             <CardTitle className="text-center">Free Demo Lesson</CardTitle>
             <CardDescription className="text-center">
-              Please enter your email below for a complimentary first lesson, or explore our site to learn about us.
+              Interested in a complimentary first lesson? Contact us directly!
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            {submitted ? (
-              <div className="text-center py-4">
-                <h3 className="text-xl font-semibold text-green-600 mb-2">Thank you!</h3>
-                <p>We'll be in touch soon to schedule your free demo lesson.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-2">
-                  <Input
-                    type="email"
-                    placeholder="Your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Textarea
-                    placeholder="Please include your availability and time zone"
-                    value={availability}
-                    onChange={(e) => setAvailability(e.target.value)}
-                    rows={3}
-                  />
-                  <p className="text-sm text-gray-500">
-                    Please include your availability and time zone for scheduling your free trial lesson.
-                  </p>
-                </div>
-                <Button type="submit" className="w-full bg-[#3b5998] hover:bg-[#2d4373]">
-                  Get Your Free Demo
-                </Button>
-                <p className="text-sm text-center text-gray-500 mt-2">
-                  Or email{" "}
-                  <a href="mailto:team@acebridge.org" className="underline">
-                    team@acebridge.org
-                  </a>{" "}
-                  with your availability.
-                </p>
-              </form>
-            )}
+          <CardContent className="text-center py-6">
+            <p className="mb-6">
+              Click below to email Reese and schedule your free demo lesson.
+              Please include a time that works best for your free demo.
+            </p>
+            <Button 
+              className="bg-[#3b5998] hover:bg-[#2d4373] py-3 px-6 text-lg"
+              asChild
+            >
+              <a href="mailto:reese@acebridge.org?subject=Free%20Demo%20Lesson%20Request&body=Hi%20Reese%2C%0A%0AI'm%20interested%20in%20scheduling%20a%20free%20demo%20lesson.%20Here%20are%20some%20times%20that%20work%20best%20for%20me%3A%0A%0A[Please%20include%20your%20availability%20and%20time%20zone]%0A%0AThank%20you!">
+                Email reese@acebridge.org
+              </a>
+            </Button>
           </CardContent>
         </Card>
       </div>

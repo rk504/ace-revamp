@@ -1,105 +1,58 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { MailIcon, PhoneIcon } from "lucide-react"
+import { MailIcon, PhoneIcon, CalendarIcon, ClockIcon } from "lucide-react"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    availability: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    // In a real implementation, you would send this to your backend
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
-    setFormData({ name: "", email: "", message: "", availability: "" })
-  }
-
   return (
     <div className="container mx-auto py-12 px-4">
       <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Contact Us</h1>
-      <p className="text-xl text-center max-w-3xl mx-auto mb-12">
-        Want a Complimentary Introductory Lesson? Get in touch today to schedule a session. Feel free to send some
-        possible times for a demo lesson, or simply fill out this form with your email to learn more.
+      <p className="text-xl text-center max-w-3xl mx-auto mb-6">
+        Want a complimentary introductory lesson? Contact Reese directly to schedule your free demo.
+      </p>
+      <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-600">
+        Please include your availability and time zone when you reach out.
       </p>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div>
-          <Card>
+          <Card className="h-full">
             <CardHeader>
-              <CardTitle>Get in Touch</CardTitle>
-              <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
+              <CardTitle className="text-2xl">Email Reese Directly</CardTitle>
+              <CardDescription>The fastest way to schedule your free demo lesson</CardDescription>
             </CardHeader>
-            <CardContent>
-              {submitted ? (
-                <div className="text-center py-8">
-                  <h3 className="text-xl font-semibold text-green-600 mb-2">Thank you for your message!</h3>
-                  <p>We'll be in touch with you shortly to schedule your free lesson.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
-                      Name
-                    </label>
-                    <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="availability" className="text-sm font-medium">
-                      Your Availability
-                    </label>
-                    <Textarea
-                      id="availability"
-                      name="availability"
-                      placeholder="Please include your time zone"
-                      rows={3}
-                      value={formData.availability}
-                      onChange={handleChange}
-                    />
-                    <p className="text-sm text-gray-500">
-                      Please include possible times for a demo lesson and your time zone.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message (Optional)
-                    </label>
-                    <Textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} />
-                  </div>
-                  <Button type="submit" className="w-full bg-[#3b5998] hover:bg-[#2d4373]">
-                    Send Message
-                  </Button>
-                </form>
-              )}
+            <CardContent className="flex flex-col items-center">
+              <div className="bg-gray-50 p-6 rounded-lg mb-6 w-full text-center">
+                <p className="mb-4 text-lg">
+                  Click below to email Reese and schedule your free demo lesson:
+                </p>
+                <Button 
+                  className="w-full bg-[#3b5998] hover:bg-[#2d4373] py-3 text-lg mb-4"
+                  asChild
+                >
+                  <a href="mailto:reese@acebridge.org?subject=Free%20Demo%20Lesson%20Request&body=Hi%20Reese%2C%0A%0AI'm%20interested%20in%20scheduling%20a%20free%20demo%20lesson.%0A%0AMy%20availability%20is%3A%0A%5BPlease%20include%20days%20of%20the%20week%20and%20times%5D%0A%0AMy%20time%20zone%20is%3A%20%5BYour%20time%20zone%5D%0A%0AThank%20you!">
+                    Email reese@acebridge.org
+                  </a>
+                </Button>
+                <p className="text-gray-600">
+                  When emailing, please include:
+                </p>
+                <ul className="text-left list-none space-y-3 mt-3">
+                  <li className="flex items-center gap-2">
+                    <CalendarIcon className="h-5 w-5 text-[#3b5998] flex-shrink-0" />
+                    <span>Days of the week that work for you</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ClockIcon className="h-5 w-5 text-[#3b5998] flex-shrink-0" />
+                    <span>Best times during those days</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ClockIcon className="h-5 w-5 text-[#3b5998] flex-shrink-0" />
+                    <span>Your time zone</span>
+                  </li>
+                </ul>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -108,11 +61,14 @@ export default function ContactPage() {
           <Card>
             <CardContent className="pt-6">
               <div className="flex items-start space-x-4">
-                <MailIcon className="h-6 w-6 text-[#3b5998] mt-1" />
+                <MailIcon className="h-6 w-6 text-[#3b5998] mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">reese@acebridge.org</p>
-                  <p className="text-sm text-gray-500 mt-1">For general inquiries: team@acebridge.org</p>
+                  <p className="text-gray-600">
+                    <a href="mailto:reese@acebridge.org" className="text-[#3b5998] hover:underline">
+                      reese@acebridge.org
+                    </a>
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -121,28 +77,13 @@ export default function ContactPage() {
           <Card>
             <CardContent className="pt-6">
               <div className="flex items-start space-x-4">
-                <PhoneIcon className="h-6 w-6 text-[#3b5998] mt-1" />
+                <PhoneIcon className="h-6 w-6 text-[#3b5998] mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
                   <p className="text-gray-600">(415) 570-2971</p>
-                  <p className="text-sm text-gray-500 mt-1">Feel free to call or text to schedule a lesson</p>
+                  <p className="text-sm text-gray-500 mt-1">Feel free to text to schedule a lesson</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="pt-6">
-              <h3 className="font-semibold mb-4">Alternative Contact Methods</h3>
-              <p className="mb-2">You can also reach us through:</p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Submit the form on this page</li>
-                <li>Send a text to (415) 570-2971</li>
-                <li>Email reese@acebridge.org</li>
-              </ul>
-              <p className="mt-4 text-sm text-gray-500">
-                Please include your availability and time zone when contacting us for scheduling.
-              </p>
             </CardContent>
           </Card>
         </div>

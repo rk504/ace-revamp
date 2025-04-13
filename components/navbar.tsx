@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { YoutubeIcon, LinkedinIcon } from "lucide-react"
+import { YoutubeIcon, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react"
 
 export function Navbar() {
   return (
@@ -14,18 +14,21 @@ export function Navbar() {
               <p className="text-sm md:text-base">Try a Free, No-Commitment Demo Lesson</p>
               <p className="text-sm">
                 Email:{" "}
-                <a href="mailto:team@acebridge.org" className="underline">
-                  team@acebridge.org
+                <a href="mailto:reese@acebridge.org" className="underline">
+                  reese@acebridge.org
                 </a>
               </p>
             </div>
           </div>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="https://youtube.com/acebridge" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <a href="https://www.youtube.com/@acebridge1770" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <YoutubeIcon className="h-6 w-6" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/ace-bridge/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <LinkedinIcon className="h-6 w-6" />
+            </a>
+            <a href="mailto:reese@acebridge.org" aria-label="Email">
+              <MailIcon className="h-6 w-6" />
             </a>
           </div>
         </div>

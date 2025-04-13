@@ -9,13 +9,13 @@ export function Hero() {
             At Ace Bridge, you'll sharpen your bridge skills while having fun.
           </h2>
           <p className="text-xl md:text-2xl mb-8">
-            Learn to play more confidently the Ace Bridge Way: Less Lectures, More Playing Bridge.
+            Gain confidence the Ace Bridge Way: Less Lectures, More Playing Bridge.
           </p>
         </div>
         <div className="md:w-1/2">
           <div className="relative w-full h-[300px] md:h-[400px]">
             <Image
-              src="/images/playing-cards.jpg"
+              src="/images/playing-cards.png"
               alt="Bridge playing cards"
               fill
               className="object-cover rounded-lg shadow-lg"

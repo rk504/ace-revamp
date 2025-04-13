@@ -24,14 +24,16 @@ export default function TutorialVideoPage() {
           </CardHeader>
           <CardContent>
             <div className="aspect-video w-full">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Negative Doubles Tutorial"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+            <iframe
+              width="850"
+              height="500"
+              src="https://www.youtube.com/embed/YJftoVeAZFY?autoplay=1&mute=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
             </div>
             <div className="mt-6 space-y-4">
               <h3 className="text-xl font-semibold">About This Video</h3>
@@ -46,7 +48,7 @@ export default function TutorialVideoPage() {
               </p>
               <div className="mt-6">
                 <Button asChild>
-                  <Link href="https://youtube.com/acebridge">View More Videos</Link>
+                  <Link href="https://www.youtube.com/channel/UCGpqgSoiMqMyhWcXxg-yHZA">View More Videos</Link>
                 </Button>
               </div>
             </div>
