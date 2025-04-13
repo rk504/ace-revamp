@@ -7,8 +7,7 @@ export default function TutorialVideoPage() {
     <div className="container mx-auto py-12 px-4">
       <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Tutorial Video: Negative Doubles</h1>
       <p className="text-xl text-center max-w-3xl mx-auto mb-12">
-        Reese made this video as a guest speaker for the ACBL's Endless Summer Event in late June. He has now been
-        featured four times as a Celebrity Speaker. Please enjoy this video and others, and feel free to ask any
+        Reese made this video as a guest speaker for the ACBL. Please enjoy this video (and others below), and feel free to ask any
         follow-up questions through the contact page or by sending him an email at{" "}
         <a href="mailto:reese@acebridge.org" className="underline">
           reese@acebridge.org
@@ -48,7 +47,7 @@ export default function TutorialVideoPage() {
               </p>
               <div className="mt-6">
                 <Button asChild>
-                  <Link href="https://www.youtube.com/channel/UCGpqgSoiMqMyhWcXxg-yHZA">View More Videos</Link>
+                  <Link href="https://www.youtube.com/@acebridge1770">View More Videos</Link>
                 </Button>
               </div>
             </div>

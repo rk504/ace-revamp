@@ -12,7 +12,7 @@ export default function TeamPage() {
       role: "Founder",
       bio: [
         "Reese Koppel founded the Yale Bridge Club, wrote for Audrey Grant's Interactive Daily Bridge Column, and serves on the board of the ACBL Educational Foundation.",
-        "Reese won the 2018 King of Bridge award as well as the Baron Barclay National Youth Pairs that same year. He has been featured three times as an ACBL Celebrity Speaker.",
+        "Reese won the 2018 King of Bridge award as well as the Baron Barclay National Youth Pairs that same year. He has been featured four times as an ACBL Celebrity Speaker.",
         "Hundreds of bridge students have benefited from his unique coaching method which emphasizes exciting cardplay techniques over rigorous bidding lectures.",
       ],
       image: "/images/reese-koppel.jpg",
