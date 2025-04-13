@@ -1,0 +1,19 @@
+.vercel
+# macOS
+.DS_Store
+
+# Node
+node_modules
+
+# Prevent parent project content from leaking in
+../*
+
+# Ignore large files from casing_math or other projects
+CO/
+nba/
+data/
+games/
+volops/
+southwest_scraper_vision/
+personal-website/
+11ty/
