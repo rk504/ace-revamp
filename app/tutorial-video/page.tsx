@@ -43,7 +43,7 @@ export default function TutorialVideoPage() {
               <p>
                 You'll learn when to use negative doubles, how to respond to them, and common scenarios where they're
                 particularly effective. This convention is essential for competitive bidding and will significantly
-                improve your partnership's ability to find major suit fits after interference.
+                improve your partnership's ability to find 4-4 fits after interference.
               </p>
               <div className="mt-6">
                 <Button asChild>
