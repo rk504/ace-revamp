@@ -20,13 +20,15 @@ export default function TestimonialsPage() {
       
       <div className="space-y-8">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="bg-white shadow rounded-lg p-6">
-            <blockquote className="text-lg italic text-gray-600">
-              "{testimonial.quote}"
-            </blockquote>
-            <p className="mt-4 font-semibold text-gray-900">
-              — {testimonial.author}
-            </p>
+          <div key={index} className="bg-white shadow rounded-lg overflow-hidden">
+            <div className="p-6">
+              <blockquote className="text-lg italic text-gray-600">
+                "{testimonial.quote}"
+              </blockquote>
+              <p className="mt-4 font-semibold text-gray-900">
+                — {testimonial.author}
+              </p>
+            </div>
           </div>
         ))}
       </div>

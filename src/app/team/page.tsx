@@ -1,3 +1,5 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
 export default function TeamPage() {
   const team = [
     {
@@ -47,14 +49,18 @@ export default function TeamPage() {
 
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {team.map((member) => (
-          <div key={member.name} className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-2">{member.name}</h2>
-            <p className="text-gray-500 mb-4">{member.role}</p>
-            {member.bio.map((paragraph, index) => (
-              <p key={index} className="mb-4">
-                {paragraph}
-              </p>
-            ))}
+          <div key={member.name} className="bg-white shadow rounded-lg overflow-hidden">
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
+              <p className="text-gray-500">{member.role}</p>
+            </div>
+            <div className="p-6 pt-0">
+              {member.bio.map((paragraph, index) => (
+                <p key={index} className="mb-4">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         ))}
       </div>
